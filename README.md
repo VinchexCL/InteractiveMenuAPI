@@ -32,3 +32,46 @@ La `InteractiveMenuAPI` es una biblioteca para crear menús interactivos en plug
     <artifactId>interactive-menu-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
+
+package dev.vinchexcl.example.others;
+
+import dev.vinchexcl.interactivemenuapi.utils.InteractiveMenu;
+import dev.vinchexcl.interactivemenuapi.listeners.MenuListener;
+import org.bukkit.Material;
+import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
+
+public class MenuManager {
+
+    private final InteractiveMenu menu;
+
+    public MenuManager(Plugin plugin) {
+        // Crea un menú con 3 objetos
+        menu = new InteractiveMenu("My Menu", 9);
+
+        // Agrega el primer objeto
+        menu.setItem(0, InteractiveMenu.createMenuItem(Material.DIAMOND, "Diamond Item", "This is a diamond item"), event -> {
+            Player player = (Player) event.getWhoClicked();
+            player.sendMessage("You clicked the diamond item!");
+        });
+
+        // Agrega el segundo objeto
+        menu.setItem(1, InteractiveMenu.createMenuItem(Material.GOLD_INGOT, "Gold Item", "This is a gold item"), event -> {
+            Player player = (Player) event.getWhoClicked();
+            player.sendMessage("You clicked the gold item!");
+        });
+
+        // Agrega el tercer objeto
+        menu.setItem(2, InteractiveMenu.createMenuItem(Material.IRON_INGOT, "Iron Item", "This is an iron item"), event -> {
+            Player player = (Player) event.getWhoClicked();
+            player.sendMessage("You clicked the iron item!");
+        });
+
+        // Registra el menú
+        MenuListener.registerMenu("myMenu", menu);
+    }
+
+    public void openMenu(Player player) {
+        menu.open(player);
+    }
+}
