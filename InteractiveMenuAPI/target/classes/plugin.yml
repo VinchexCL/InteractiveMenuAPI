@@ -1,0 +1,6 @@
+name: InteractiveMenuAPI
+main: com.example.interactivemenuapi.InteractiveMenuAPI
+version: 1.0
+api-version: 1.8
+description: API para crear menús interactivos en Spigot
+author: VinchexCL
