@@ -38,8 +38,8 @@ La `InteractiveMenuAPI` es una biblioteca para crear menús interactivos en plug
 
 ```java
 
-import dev.vinchexcl.interactivemenuapi.utils.InteractiveMenu;
-import dev.vinchexcl.interactivemenuapi.listeners.MenuListener;
+import dev.vinchex.interactivemenuapi.utils.InteractiveMenu;
+import dev.vinchex.interactivemenuapi.listeners.MenuListener;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.Plugin;
@@ -83,7 +83,7 @@ public class MenuManager {
 
 ```java
 
-import dev.vinchexcl.interactivemenuapi.utils.InteractiveMenu;
+import dev.vinchex.interactivemenuapi.utils.InteractiveMenu;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
