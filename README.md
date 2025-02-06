@@ -22,12 +22,10 @@ La `InteractiveMenuAPI` es una biblioteca para crear menús interactivos en plug
 
 ```xml
 
-<repositories>
     <repository>
         <id>github</id>
         <url>https://maven.pkg.github.com/VinchexCL/InteractiveMenuAPI</url>
     </repository>
-</repositories>
 
 <dependency>
     <groupId>dev.vinchex</groupId>
