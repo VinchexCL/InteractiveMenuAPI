@@ -22,7 +22,7 @@ La `InteractiveMenuAPI` es una biblioteca para crear menús interactivos en plug
 
 ```xml
 <dependency>
-    <groupId>com.example</groupId>
+    <groupId>dev.vinchex</groupId>
     <artifactId>interactive-menu-api</artifactId>
     <version>1.0-SNAPSHOT</version>
 </dependency>
