@@ -21,6 +21,14 @@ La `InteractiveMenuAPI` es una biblioteca para crear menús interactivos en plug
 2. Incluye la dependencia en tu archivo `pom.xml`.
 
 ```xml
+
+<repositories>
+    <repository>
+        <id>github</id>
+        <url>https://maven.pkg.github.com/VinchexCL/InteractiveMenuAPI</url>
+    </repository>
+</repositories>
+
 <dependency>
     <groupId>dev.vinchex</groupId>
     <artifactId>interactive-menu-api</artifactId>
