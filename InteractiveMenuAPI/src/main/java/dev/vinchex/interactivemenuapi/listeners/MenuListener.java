@@ -8,14 +8,12 @@ import org.bukkit.event.inventory.InventoryCloseEvent;
 import org.bukkit.event.inventory.InventoryDragEvent;
 import org.bukkit.event.player.PlayerDropItemEvent;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.Iterator;
 import java.util.Map;
+import java.util.concurrent.ConcurrentHashMap;
 
 public class MenuListener implements Listener {
 
-    private static final Map<String, InteractiveMenu> menus = Collections.synchronizedMap(new HashMap<>());
+    private static final Map<String, InteractiveMenu> menus = new ConcurrentHashMap<>();
 
     public static void registerMenu(String id, InteractiveMenu menu) {
         menus.put(id, menu);
@@ -27,45 +25,29 @@ public class MenuListener implements Listener {
 
     @EventHandler
     public void onInventoryClick(InventoryClickEvent event) {
-        synchronized (menus) {
-            Iterator<InteractiveMenu> iterator = menus.values().iterator();
-            while (iterator.hasNext()) {
-                InteractiveMenu menu = iterator.next();
-                menu.handleClick(event);
-            }
+        for (InteractiveMenu menu : menus.values()) {
+            menu.handleClick(event);
         }
     }
 
     @EventHandler
     public void onInventoryDrag(InventoryDragEvent event) {
-        synchronized (menus) {
-            Iterator<InteractiveMenu> iterator = menus.values().iterator();
-            while (iterator.hasNext()) {
-                InteractiveMenu menu = iterator.next();
-                menu.handleDrag(event);
-            }
+        for (InteractiveMenu menu : menus.values()) {
+            menu.handleDrag(event);
         }
     }
 
     @EventHandler
     public void onPlayerDropItem(PlayerDropItemEvent event) {
-        synchronized (menus) {
-            Iterator<InteractiveMenu> iterator = menus.values().iterator();
-            while (iterator.hasNext()) {
-                InteractiveMenu menu = iterator.next();
-                menu.handleDrop(event);
-            }
+        for (InteractiveMenu menu : menus.values()) {
+            menu.handleDrop(event);
         }
     }
 
     @EventHandler
     public void onInventoryClose(InventoryCloseEvent event) {
-        synchronized (menus) {
-            Iterator<InteractiveMenu> iterator = menus.values().iterator();
-            while (iterator.hasNext()) {
-                InteractiveMenu menu = iterator.next();
-                menu.handleClose(event);
-            }
+        for (InteractiveMenu menu : menus.values()) {
+            menu.handleClose(event);
         }
     }
 }
