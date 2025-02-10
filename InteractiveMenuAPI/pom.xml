@@ -7,7 +7,6 @@
     <version>1.0-SNAPSHOT</version>
     <name>InteractiveMenuAPI</name>
     <description>API para crear menús interactivos en Spigot</description>
-    <url>http://www.example.com</url>
 
     <properties>
         <maven.compiler.source>1.8</maven.compiler.source>
