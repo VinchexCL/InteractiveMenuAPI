@@ -15,7 +15,6 @@ public class Main extends JavaPlugin {
     @Override
     public void onEnable() {
         getLogger().info("InteractiveMenuAPI has been enabled!");
-        // Registra el listener para manejar los clics en los menús
         getServer().getPluginManager().registerEvents(new MenuListener(), this);
     }
 
